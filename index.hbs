@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+    <script src="http://vk.com/js/api/openapi.js"></script>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+<div class="modal">
+<div id="modal-container">
+<div id="container">
+    <div id="choiceFriends">
+        <p id="tagP">Выберите друзей</p>
+        <span class="close">&times;</span>
+    </div>
+    <div class="headerInput">
+        <input type="search" id="input-search-leftFriend" class="input" placeholder="Начните вводить имя друга" value="">
+        <div class="tagDiv"><p class="tagPList">Ваши друзья</p></div>
+    </div>
+    <div id="myFriends" class="filterFriend">
+    </div>
+
+    <div class="headerInput">
+
+        <input type="search" id="input-search-rightFriend" class="input" placeholder="Начните вводить имя друга" value="">
+        <div class="tagDiv"><p class="tagPList">Друзья в списке</p></div>
+    </div>
+    <div id="myFriendsList" class="filterFriend">
+    </div>
+    <div class="footer">
+    <button id="button">Сохранить</button>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
