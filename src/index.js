@@ -46,9 +46,12 @@ let myModule = {
                         if (result.error) {
                             reject();
                         } else {
-                            resolve(result.response.items);
                             self.leftFriendList = result.response.items.sort(self.compare);
                             self.rightFriendList = [];
+
+                            friendsList.innerHTML = self.createFriendsDiv(self.leftFriendList);
+                            secondList.innerHTML = self.createRightFriendsDiv(self.rightFriendList);
+                            resolve();
                         }
                     });
                 }
@@ -61,13 +64,9 @@ let myModule = {
         login()
             .then(() => callAPI('friends.get', { v: 5.63, fields: ['photo_100'] }))
             .then(function(result) {
-                if (!localStorage.length) {
-                    friendsList.innerHTML = self.createFriendsDiv(result);
-                    secondList.innerHTML = self.createRightFriendsDiv(self.rightFriendList);
-                }
                 self.setListeners();
             })
-            .catch(() => console.log('Все плохо!!!!'));
+            .catch(() => console.log('Everything is bad!'));
     },
     //  friends
     createFriendsDiv: function(leftFriendList) {
